@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+import { HashRouter, useRoutes } from "react-router-dom";
+import { appRouter } from "./router";
 
-function App() {
+const App = () => {
+  const appRoute = useRoutes(appRouter);
+  return appRoute;
+};
+
+const Wrapper = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <HashRouter>
+      <App />
+    </HashRouter>
   );
-}
-
-export default App;
+};
+export default Wrapper;
